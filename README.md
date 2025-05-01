@@ -57,7 +57,7 @@ O **ColdTech** é um aplicativo de landing page desenvolvido para oferecer servi
 
 3. **Inicie o Servidor de Desenvolvimento**
    ```bash
-   npm start
+   npm run dev
    ```
 
 4. **Acesse no Navegador**
