@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  // Estado para controlar a visibilidade do modal
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Função para abrir o modal
   const openModal = () => setIsModalOpen(true);
+
+  // Função para fechar o modal
   const closeModal = () => setIsModalOpen(false);
 
   return (
