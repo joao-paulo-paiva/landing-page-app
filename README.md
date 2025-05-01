@@ -47,7 +47,7 @@ O **ColdTech** é um aplicativo de landing page desenvolvido para oferecer servi
 
 1. **Clone o Repositório**
    ```bash
-   git clone https://github.com/seu-usuario/coldtech.git
+   git clone https://github.com/joao-paulo-paiva/landing-page-app.git
    ```
 
 2. **Instale as Dependências**
