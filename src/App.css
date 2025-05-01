@@ -8,6 +8,7 @@
   --cor-erro: #DC3545; /* Vermelho para erros */
   --cor-destaque: #00A8E8; /* Azul claro para destaques */
   --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--cor-fundo); /* Define o fundo claro */
 }
 
 * {
@@ -19,7 +20,7 @@
 body {
   font-family: var(--fonte-principal);
   color: var(--cor-texto);
-  background-color: var(--cor-fundo);
+  background-color: var(--cor-fundo); /* Fundo claro */
   line-height: 1.6;
   font-size: 16px;
 }
@@ -39,6 +40,10 @@ html, body, #root {
   width: 100%;
 }
 
+html, body {
+  background-color: var(--cor-fundo); /* Fundo claro */
+  color: var(--cor-texto); /* Cor do texto */
+}
 
 .skip-link {
   position: absolute;
@@ -67,6 +72,57 @@ html, body, #root {
   padding: 0 20px;
 }
 
+/* --- Navbar --- */
+.navbar {
+  background-color: var(--cor-primaria);
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo img {
+  height: 40px;
+}
+
+/* Estilo para o logo */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-text {
+  color: var(--cor-branco); /* Texto branco */
+  font-size: 1.5rem; /* Tamanho do texto */
+  font-weight: bold; /* Texto em negrito */
+  margin-left: 0.5rem; /* Espaço entre o logo e o texto */
+  vertical-align: middle; /* Alinhamento vertical */
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links li a {
+  color: var(--cor-branco);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+  color: var(--cor-destaque);
+}
 
 /* --- Seção Hero --- */
 .hero-section {
@@ -398,7 +454,7 @@ section h2 {
 .cliente-nome {
   font-weight: bold;
   font-size: 1em;
-  color: var(--cor-primaria);
+  color: var (--cor-primaria);
   text-align: right;
   display: block;
   margin-top: 10px;
@@ -562,6 +618,349 @@ button:hover {
   border-left: 3px solid var(--cor-secundaria);
   font-size: 1em;
   line-height: 1.5;
+}
+
+/* --- Seção Serviços --- */
+.servicos-section {
+  padding: 60px 20px;
+  background-color: var(--cor-fundo);
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.servico-item {
+  background-color: var(--cor-branco);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.servico-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.servico-item .icon {
+  font-size: 2.5em;
+  color: var(--cor-primaria);
+  margin-bottom: 10px;
+}
+
+.servico-item h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: var(--cor-primaria);
+}
+
+.servico-item p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* --- Seção Agendamento --- */
+.agendamento-section {
+  background-color: var(--cor-fundo);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.agendamento-section h2 {
+  font-size: 2.2em;
+  color: var(--cor-primaria);
+  margin-bottom: 20px;
+}
+
+.agendamento-section p {
+  font-size: 1.2em;
+  color: var(--cor-texto);
+  margin-bottom: 30px;
+}
+
+#agendamento-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: var(--cor-branco);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#agendamento-form input,
+#agendamento-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  font-family: var(--fonte-principal);
+}
+
+#agendamento-form textarea {
+  resize: vertical;
+}
+
+#agendamento-form button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2em;
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#agendamento-form button:hover {
+  background-color: var(--cor-destaque);
+}
+
+#agendamento-form-status {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#agendamento-form-status.success {
+  color: var(--cor-sucesso);
+}
+
+#agendamento-form-status.error {
+  color: var(--cor-erro);
+}
+
+/* --- Seção Contato --- */
+.contato-section {
+  background-color: var(--cor-fundo);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contato-section h2 {
+  font-size: 2.2em;
+  color: var(--cor-primaria);
+  margin-bottom: 20px;
+}
+
+.contato-section p {
+  font-size: 1.2em;
+  color: var(--cor-texto);
+  margin-bottom: 30px;
+}
+
+#contato-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: var(--cor-branco);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contato-form input,
+#contato-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  font-family: var(--fonte-principal);
+}
+
+#contato-form textarea {
+  resize: vertical;
+}
+
+#contato-form button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2em;
+  background-color: var(--cor-primaria);
+  color: var (--cor-branco);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#contato-form button:hover {
+  background-color: var(--cor-destaque);
+}
+
+#contato-form-status {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#contato-form-status.success {
+  color: var(--cor-sucesso);
+}
+
+#contato-form-status.error {
+  color: var(--cor-erro);
+}
+
+/* --- Modal --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: var(--cor-branco);
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: left;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.modal h2 {
+  font-size: 1.8em;
+  color: var(--cor-primaria);
+  margin-bottom: 15px;
+}
+
+.modal p {
+  font-size: 1em;
+  color: var(--cor-texto);
+  margin-bottom: 20px;
+}
+
+.modal form input,
+.modal form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.modal form button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2em;
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal form button:hover {
+  background-color: var(--cor-destaque);
+}
+
+/* Botão para fechar o modal */
+.modal-exit-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: var(--cor-destaque); /* Cor de destaque */
+  color: var(--cor-branco); /* Texto branco */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-exit-button:hover {
+  background-color: var(--cor-primaria); /* Cor ao passar o mouse */
+}
+
+/* --- Seção CTA --- */
+.cta-section {
+  background-color: var(--cor-secundaria); /* Azul médio */
+  color: var(--cor-branco); /* Texto branco */
+  padding: 60px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  margin: 40px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+.cta-content {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.cta-content h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: var(--cor-branco); /* Título branco */
+}
+
+.cta-content p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: var(--cor-branco); /* Texto branco */
+}
+
+.cta-content .cta-button {
+  font-size: 1.2em;
+  padding: 15px 30px;
+  border-radius: 5px;
+  background-color: var(--cor-destaque); /* Azul claro */
+  color: var(--cor-branco); /* Texto branco */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-content .cta-button:hover {
+  background-color: var(--cor-primaria); /* Azul escuro */
+}
+
+.cta-image {
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+}
+
+.cta-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
 }
 
 /* --- Footer --- */
